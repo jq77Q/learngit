@@ -19,7 +19,7 @@ class UserManager:
         f.close()
     # 添加用户
     def add_user(self, name, age):
-        if len(self.users ==0):
+        if len(self.users) ==0:
             new_id = 1
         else:
             new_id = self.users[-1]["id"] + 1
