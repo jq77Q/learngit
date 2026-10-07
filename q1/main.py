@@ -8,7 +8,7 @@ def analyze_log(filepath: str) -> dict:
     by_level = {}
     by_user = {}
     last_error = None
-# 打开文件
+# 打开文件i
     f = open(filepath, "r", encoding="utf-8")
     print("开始读取日志文件")
     for line in f:
@@ -18,7 +18,13 @@ def analyze_log(filepath: str) -> dict:
 # 防止报错
         try:
             log = json.loads(line)
+            print(f"读取到日志: {log}")
+            need_keys = {"timestamp", "level", "user", "message"}
+            if not need_keys.issubset(log.keys()):
+                print(f"日志缺少必要字段: {log}")
+                continue
         except Exception:
+            print(f"无法解析日志行: {line}")
             continue
         total = total + 1
         lv = log["level"]
@@ -42,5 +48,5 @@ def analyze_log(filepath: str) -> dict:
         "last_error": last_error
     }
 if __name__ == "__main__":
-    result = analyze_log("app.jsonl")
+    result = analyze_log("q1/app.jsonl")
     print(result)

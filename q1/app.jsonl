@@ -1,0 +1,5 @@
+{"timestamp":"2026-10-01","level":"INFO","user":"zhangsan","message":"system start"}
+{"timestamp":"2026-10-02","level":"ERROR","user":"lisi","message":"database disconnect"}
+{"timestamp":"2026-10-03","level":"INFO","user":"zhangsan","message":"user login"}
+{"timestamp":"2026-10-04","level":"WARN","user":"wangwu"}
+{"timestamp":"2026-10-05","level":"ERROR","user":"wangwu","message":"timeout"}
